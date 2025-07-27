@@ -1,0 +1,6 @@
+@D_API_Layer_HostAddress = http://localhost:5076
+
+GET {{D_API_Layer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
