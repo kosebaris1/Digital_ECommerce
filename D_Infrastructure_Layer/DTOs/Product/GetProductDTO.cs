@@ -11,6 +11,7 @@ namespace D_Infrastructure_Layer.DTOs.Product
 {
     public class GetProductDTO
     {
+        public Guid Id { get; set; }
         public string ProductName { get; set; }
 
         public decimal ProductPrice { get; set; }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using D_Domain_Layer.Entities;
+using D_Domain_Layer.Extensions;
 using D_Infrastructure_Layer.DTOs.Product;
 using D_Persistence_Layer.AppDbContext;
 using D_Persistence_Layer.Model;
@@ -22,8 +23,12 @@ namespace D_Persistence_Layer.Repositories.Repository
 
         public async Task<BaseResponseModel> AddProduct(ProductDTO productDTO)
         {
-            var values = _mapper.Map<Product>(productDTO);
-            var result = await Add(values);
+            var action = productDTO.Color;
+            var actionDescription = action.GetDescription();
+
+            var objMap = _mapper.Map<Product>(productDTO);
+            objMap.Color = actionDescription;
+            var result = await Add(objMap);
             if(result != null)
             {
                 return new BaseResponseModel
@@ -91,10 +96,10 @@ namespace D_Persistence_Layer.Repositories.Repository
 
         }
 
-        public async Task<BaseResponseModel> UpdateProduct(Guid id, ProductDTO productDTO)
+        public async Task<BaseResponseModel> UpdateProduct(UpdateProductDTO productDTO)
         {
             var objMap = _mapper.Map<Product>(productDTO);
-            var result = await Update(id, objMap);
+            var result = await Update(productDTO.Id, objMap);
             if (result is not null)
             {
                 return new BaseResponseModel

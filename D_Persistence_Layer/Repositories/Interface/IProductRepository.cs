@@ -18,6 +18,6 @@ namespace D_Persistence_Layer.Repositories.Interface
         Task<BaseResponseModel> RemoveProduct(Guid id);
 
         Task<BaseResponseModel> AddProduct(ProductDTO product);
-        Task<BaseResponseModel> UpdateProduct(Guid id,ProductDTO product);
+        Task<BaseResponseModel> UpdateProduct(UpdateProductDTO product);
     }
 }

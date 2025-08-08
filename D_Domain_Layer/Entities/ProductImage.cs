@@ -13,5 +13,6 @@ namespace D_Domain_Layer.Entities
         [ForeignKey(nameof(Product))]
         public Guid ProductId { get; set; }
         public virtual Product Product { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

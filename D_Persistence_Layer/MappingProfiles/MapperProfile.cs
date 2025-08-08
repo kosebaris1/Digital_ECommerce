@@ -17,6 +17,8 @@ namespace D_Persistence_Layer.MappingProfiles
             CreateMap<MainCategoryDTO, MainCategory>().ReverseMap(); 
             CreateMap<SubCategoryDTO, SubCategory>().ReverseMap(); 
             CreateMap<ProductDTO, Product>().ReverseMap(); 
+            CreateMap<GetProductDTO, Product>().ReverseMap(); 
+            CreateMap<UpdateProductDTO, Product>().ReverseMap(); 
         }
     }
 }

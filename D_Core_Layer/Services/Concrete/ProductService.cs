@@ -42,9 +42,9 @@ namespace D_Core_Layer.Services.Concrete
             return result;
         }
 
-        public Task<BaseResponseModel> UpdateProduct(Guid id, ProductDTO product)
+        public Task<BaseResponseModel> UpdateProduct(UpdateProductDTO product)
         {
-            var result = _productRepository.UpdateProduct(id, product);
+            var result = _productRepository.UpdateProduct(product);
             return result;
         }
     }

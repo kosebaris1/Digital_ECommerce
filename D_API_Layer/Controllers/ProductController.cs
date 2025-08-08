@@ -16,14 +16,14 @@ namespace D_API_Layer.Controllers
             _productService = productService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllProduct")]
         public async Task<IActionResult> GetAllProducts()
         {
             var result = await _productService.GetAllProducts();
             return Ok(result);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetById")]
         public async Task<IActionResult> GetProductById(Guid id)
         {
             var result = await _productService.GetProductById(id);
@@ -42,15 +42,15 @@ namespace D_API_Layer.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] ProductDTO product)
+        [HttpPut]
+        public async Task<IActionResult> UpdateProduct(UpdateProductDTO product)
         {
             if (product == null)
             {
                 return BadRequest("Product data is null");
             }
 
-            var result = await _productService.UpdateProduct(id, product);
+            var result = await _productService.UpdateProduct(product);
             return Ok(result);
         }
 
