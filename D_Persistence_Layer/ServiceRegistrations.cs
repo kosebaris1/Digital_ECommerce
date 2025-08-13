@@ -25,6 +25,7 @@ namespace D_Persistence_Layer
             services.AddScoped<IMainCategoryRepository,MainCategoryRepository>();
             services.AddScoped<ISubCategoryRepository,SubCategoryRepository>();
             services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped<IProductImageRepository,ProductImageRepository>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddInfrastructureRegisterServices(Configuration);
             services.AddAutoMapper(typeof(MapperProfile));

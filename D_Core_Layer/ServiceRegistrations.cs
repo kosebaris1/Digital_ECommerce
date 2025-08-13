@@ -24,6 +24,7 @@ namespace D_Core_Layer
             services.AddScoped<IMainCategoryService,MainCategoryService>();
             services.AddScoped<ISubCategoryService,SubCategoryService>();
             services.AddScoped<IProductService,ProductService>();
+            services.AddScoped<IProductImageService,ProductImageService>();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));

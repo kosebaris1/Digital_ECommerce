@@ -18,6 +18,7 @@ namespace D_Persistence_Layer.Repositories.Interface
         Task<IEnumerable<T>> GetAll();
 
         Task<T> Add(T entity);
+        Task<List<T>> AddRange(List<T> entities);
        Task<T> Update(Guid id,T entity);
        Task Delete(Guid id);
 
